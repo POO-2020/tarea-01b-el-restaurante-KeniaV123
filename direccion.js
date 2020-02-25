@@ -1,5 +1,14 @@
-class Direccion {
+export default class Direccion {
 
+    /**
+ * @param {string} calle
+ * @param {number} numeroExt
+ * @param {number} numeroInt
+ * @param {string} colonia
+ * @param {number} codigoPost
+ * @param {string} ciudad
+ * @param {string} municipio
+ */
     constructor(calle, numeroExt, numeroInt, colonia, codigoPost, ciudad, municipio ) {
 
         this.calle = calle;
@@ -20,5 +29,7 @@ class Direccion {
 
     }
 }
+/*
  let direccion1 = new Direccion ("Av. Morelos", 13)
  console.log(direccion1.getFormatoCorto());
+ */

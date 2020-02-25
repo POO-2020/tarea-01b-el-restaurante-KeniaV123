@@ -1,48 +1,71 @@
-class Fecha {
+export default class Fecha{
     /**
-     * @param {number} dia Valor 1..31
-     * @param {number} mes Valor 1..12
-     * @param {number} año Año
-     */
-    constructor(dia,mes,año){
-        this.fecha= new Date(año, mes-1,dia);
-        this.diaSem = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
-        this.meses= ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+     * 
+     * @param {number} dia 
+     * @param {number} mes 
+     * @param {number} año 
+     */    
+    constructor(dia, mes, año){ 
+        this.fecha = new Date(año, mes-1, dia);
+        this.diaSemana = [
+            "Domingo", 
+            "Lunes", 
+            "Martes", 
+            "Miercoles", 
+            "Jueves", 
+            "Viernes", 
+            "Sabado"];
+        this.mesAño = [
+            "Enero", 
+            "Febrero", 
+            "Marzo", 
+            "Abril", 
+            "Mayo", 
+            "Junio", 
+            "Julio", 
+            "Agosto", 
+            "Septiembre", 
+            "Octubre", 
+            "Noviembre", 
+            "Diciembre"];
     }
     getAños(){
-        var difMseg = Date.now() - this.fecha;
-        var mSegAño= 1000 * 60 * 60 * 24 * 365;
-        var años = Math.trunc(difMseg/mSegAño);
-        return años;
+        let x = Date.now() - this.fecha;
+        let z = 1000*60*60*24*365;
+        let fechaDiferencia = Math.trunc(x/z);
+        return `la diferencia de la fecha es de ${fechaDiferencia} años`;
     }
     getMeses(){
-        var difMseg = Date.now()-this.fecha ;
-        var mSegMes= 1000 * 60 * 60 * 24 * 28;
-        var meses= Math.trunc(difMseg/mSegMes);
-        return meses;
+        let x = Date.now() - this.fecha;
+        let z = 1000*60*60*24*7*4;
+        let fechaDiferencia = Math.trunc(x/z);
+        return `la diferencia de la fecha es de ${fechaDiferencia} meses`;
     }
     getSemanas(){
-        var difMseg = Date.now()-this.fecha;
-        var mSegSemana= 1000* 60*60*24*7;
-        var semanas= Math.trunc(difMseg/mSegSemana);
-        return semanas;
+        let x = Date.now() - this.fecha;
+        let z = 1000*60*60*24*7;
+        let fechaDiferencia = Math.trunc(x/z);
+        return `la diferencia de la fecha es de ${fechaDiferencia} semanas`;
     }
     getDias(){
-        var difMseg= Date.now()-this.fecha;
-        var mSegDias= 1000*60*60*24;
-        var dias = Math.trunc(difMseg/mSegDias);
-        return dias;
+        let x = Date.now() - this.fecha;
+        let z = 1000*60*60*24;
+        let fechaDiferencia = Math.trunc(x/z);
+        return `la diferencia de la fecha es de ${fechaDiferencia} dias`; 
     }
     getFecha(){
-        var numMes= this.meses[this.fecha.getMonth()];
-        return(`${this.fecha.getDate()}/${numMes}/${this.fecha.getFullYear()}`);
+        return `${this.fecha.getDate()}/${this.mesAño[this.fecha.getMonth()]}/${this.fecha.getFullYear()}`;
     }
     getDiaFecha(){
-        var dia= this.diaSem[this.fecha.getDay()];
-        return dia;
+        return `${this.diaSemana[this.fecha.getDay()]}`;        
     }
 }
 /*
-var fecha1= new Fecha(14,2,2019);
+let fecha1 = new Fecha(17,2,2019);
+console.log(fecha1.getFecha());
 console.log(fecha1.getDiaFecha());
-*/ 
+console.log(fecha1.getDias());
+console.log(fecha1.getSemanas());
+console.log(fecha1.getMeses());
+console.log(fecha1.getAños());
+*/
