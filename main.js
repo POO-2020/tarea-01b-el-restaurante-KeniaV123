@@ -1,12 +1,12 @@
 import Tiempo from "./tiempo.js";
-import Fecha from "./fecha.js";
-import ElementoPedido from "./elemento-pedido.js";
+import Fecha from "./fechaRest.js";
+import ElementoPedido from "./elementoPedido.js";
 import Cliente from "./cliente.js";
 import Direccion from "./direccion.js";
 import Precio from "./precio.js";
 import Producto from "./producto.js";
 import Pedido from "./pedido.js";
-import Restaurante from "./restaurante.js";
+import Restaurante from "./restaurant.js";
 
 
 class Main {
